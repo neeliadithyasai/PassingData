@@ -29,12 +29,17 @@
                                     <action selector="btnGoNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rIR-oy-xnQ"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edS-3O-C6L">
+                                <rect key="frame" x="0.0" y="596" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rDi-ts-N2r"/>
                     <connections>
+                        <outlet property="pickerCountry" destination="edS-3O-C6L" id="KQV-b9-J3f"/>
                         <outlet property="txtName" destination="lUG-J6-7yI" id="mnI-XD-1uF"/>
                     </connections>
                 </viewController>

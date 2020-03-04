@@ -8,15 +8,36 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.countryList.count
+    }
+    func   pickerView(_ pickerView: UIPickerView, titleForRow row : Int, forComponent: Int) -> String?
+              {
+       return countryList[row]
+                  }
+   
     
     @IBOutlet weak var txtName: UITextField!
     
+    @IBOutlet weak var pickerCountry: UIPickerView!
+    
+  var countryList = ["india", "canada", "usa","iraq", "australia", "Pakistan","uk"]
+    
+   
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        pickerCountry.delegate = self
+        pickerCountry.dataSource = self
+      
        
     }
 
@@ -31,6 +52,8 @@ class FirstViewController: UIViewController {
                 
                // self.present(secondVC, animated: true, completion: nil)
         }
+       
+            
         
     
     }
