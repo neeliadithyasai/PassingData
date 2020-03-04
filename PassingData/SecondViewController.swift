@@ -23,6 +23,12 @@ class SecondViewController: UIViewController {
             self.lblWelcome.text = "welcome, \(nm)"
              self.navigationItem.title = "welcome, \(nm)"
             self.addCloseButton()
+            
+            //self.navigationController?.hidesBarsOnTap = true
+           // self.navigationController?.popToViewController(animated: true)
+        
+           // let bvc = self.navigationController?.viewControllers[1]
+        
         }else{
             self.lblWelcome.text = "No Name sent from First VC"
         }
