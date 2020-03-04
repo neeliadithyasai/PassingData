@@ -12,16 +12,40 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.countryList.count
+        if component == 0
+        {
+             return self.countryList.count
+        }
+        return codeList.count
     }
-    func   pickerView(_ pickerView: UIPickerView, titleForRow row : Int, forComponent: Int) -> String?
-              {
-       return countryList[row]
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0
+        {
+         print(countryList[row])
+            
+        }else
+        {
+            print(codeList[row])
+        }
+    }
+    
+    func   pickerView(_ pickerView: UIPickerView, titleForRow row : Int, forComponent component: Int) -> String?
+    {
+        if component == 0
+    {
+    return countryList[row]
+    
+    }
+            
+       return codeList[row]
                   }
+    
+    
    
     
     @IBOutlet weak var txtName: UITextField!
@@ -30,7 +54,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
   var countryList = ["india", "canada", "usa","iraq", "australia", "Pakistan","uk"]
     
-   
+     var codeList = ["in", "can", "usa","iq", "aus", "Pak","uk"]
     override func viewDidLoad()
     {
         super.viewDidLoad()
